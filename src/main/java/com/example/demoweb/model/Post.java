@@ -4,10 +4,12 @@ import java.util.Date;
 
 public class Post {
     private String text;
-    private Integer likes;
+    private int likes;
     private Date creationDate;
+    private Long id;
 
-    public Post(String text, Date creationDate) {
+    public Post(Long id, String text, Date creationDate) {
+        this.id = id;
         this.text = text;
         this.creationDate = creationDate;
     }
@@ -15,7 +17,10 @@ public class Post {
     public String getText() {
         return text;
     }
-
-    public Integer getLikes() { return likes; }
+    public int getLikes() { return likes; }
     public Date getCreationDate() { return creationDate; }
+    public Long getId() { return id; }
+    public void setLikes(int likes) {
+        this.likes = likes;
+    }
 }
