@@ -12,7 +12,7 @@ import org.springframework.web.bind.annotation.ResponseBody;
 @Controller
 public class PostsViewController {
     @Autowired
-    PostService postsService = new PostService();
+    PostService postsService;
 
     @RequestMapping(path = "/", method = RequestMethod.GET)
     public String list(Model model) {
@@ -24,6 +24,6 @@ public class PostsViewController {
     @ResponseBody
     @RequestMapping(path = "/post/{id}", method = RequestMethod.GET)
     public String single(@PathVariable("id") Long id) {
-        return "Здесь будет страница поста №" + id;
+        return "Здесь будет страница поста № " + id;
     }
 }
